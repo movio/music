@@ -1,0 +1,27 @@
+<div class="music">
+  <audio media-player="mediaPlayer"></audio>
+  <section>
+    <article class="music-player">
+      <div class="artist"> {{data.artist}} </div>
+      <div class="album"> {{data.album}} </div>
+      <div class="title"> {{data.title}} </div>
+      <div class="progress">
+        <div class="loaded" ng-style="{width: mediaPlayer.loadPercent + '%'}"></div>
+        <div class="played" ng-style="{width: mediaPlayer.currentTime/mediaPlayer.duration*100 + '%'}"></div>
+      </div>
+      <div class="timer">{{mediaPlayer.formatTime}}/{{mediaPlayer.formatDuration}}</div>
+    </article>
+  </section>
+
+  <section>
+    <label>
+      <span>Queue IP</span>
+      <input ng-model="queueIp" ng-change="updateCookies()" />
+    </label>
+    <br>
+    <label>
+      <span>Stream IP</span>
+      <input ng-model="streamIp" ng-change="updateCookies()" />
+    </label>
+  </section>
+</div>
